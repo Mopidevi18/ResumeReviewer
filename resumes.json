@@ -1,0 +1,779 @@
+[
+  {
+    "personal_info": {
+      "name": "Alex Johnson",
+      "phone": "555-0101"
+    },
+    "seniority": "junior",
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "major": "Computer Science",
+        "school": "State University",
+        "location": "State City, ST",
+        "dates": "2019-2023"
+      }
+    ],
+    "technical_skills": [
+      "Java",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React"
+    ],
+    "experience": [],
+    "internships": [
+      {
+        "title": "Software Engineering Intern",
+        "company": "Tech Solutions",
+        "location": "Tech Town, ST",
+        "dates": "Summer 2022",
+        "bullets": [
+          "Developed web features to enhance user experience.",
+          "Collaborated with designers to implement UI changes.",
+          "Tested and debugged applications to ensure functionality."
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "name": "Personal Portfolio Website",
+        "technologies": [
+          "HTML",
+          "CSS",
+          "JavaScript"
+        ],
+        "description": "Created a responsive personal portfolio to showcase projects."
+      }
+    ],
+    "leadership_awards": []
+  },
+  {
+    "personal_info": {
+      "name": "Jamie Smith",
+      "phone": "555-0102"
+    },
+    "seniority": "junior",
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "major": "Computer Engineering",
+        "school": "Tech Institute",
+        "location": "Tech City, ST",
+        "dates": "2020-2024"
+      }
+    ],
+    "technical_skills": [
+      "Python",
+      "Django",
+      "HTML",
+      "CSS"
+    ],
+    "experience": [],
+    "internships": [
+      {
+        "title": "Software Development Intern",
+        "company": "Innovatech",
+        "location": "Innovation City, ST",
+        "dates": "Summer 2023",
+        "bullets": [
+          "Assisted in developing applications with Python.",
+          "Participated in code reviews to improve code quality.",
+          "Documented software features for user guides."
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "name": "Task Management App",
+        "technologies": [
+          "Python",
+          "Flask",
+          "SQLite"
+        ],
+        "description": "Developed a simple task management application for users."
+      }
+    ],
+    "leadership_awards": []
+  },
+  {
+    "personal_info": {
+      "name": "Chris Lee",
+      "phone": "555-0103"
+    },
+    "seniority": "junior",
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "major": "Software Engineering",
+        "school": "Tech University",
+        "location": "Tech Town, ST",
+        "dates": "2019-2023"
+      }
+    ],
+    "technical_skills": [
+      "Java",
+      "Spring",
+      "MySQL",
+      "HTML"
+    ],
+    "experience": [],
+    "internships": [
+      {
+        "title": "Junior Developer Intern",
+        "company": "NextGen Tech",
+        "location": "Future City, ST",
+        "dates": "Summer 2022",
+        "bullets": [
+          "Developed backend services using Java and Spring.",
+          "Wrote unit tests to ensure code reliability.",
+          "Participated in team meetings to discuss project progress."
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "name": "E-commerce Website",
+        "technologies": [
+          "Java",
+          "Spring",
+          "MySQL"
+        ],
+        "description": "Created an e-commerce platform allowing users to purchase items online."
+      }
+    ],
+    "leadership_awards": []
+  },
+  {
+    "personal_info": {
+      "name": "Morgan Brown",
+      "phone": "555-0104"
+    },
+    "seniority": "junior",
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "major": "Information Technology",
+        "school": "City College",
+        "location": "City Town, ST",
+        "dates": "2021-2025"
+      }
+    ],
+    "technical_skills": [
+      "C#",
+      ".NET",
+      "Azure",
+      "JavaScript"
+    ],
+    "experience": [],
+    "internships": [
+      {
+        "title": "IT Intern",
+        "company": "Cloud Innovations",
+        "location": "Cloud City, ST",
+        "dates": "Summer 2023",
+        "bullets": [
+          "Assisted in developing cloud applications using C#.",
+          "Supported team in migrating services to Azure.",
+          "Documented technical processes for future reference."
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "name": "Weather Application",
+        "technologies": [
+          "C#",
+          ".NET",
+          "JavaScript"
+        ],
+        "description": "Built a weather application using external API for data."
+      }
+    ],
+    "leadership_awards": []
+  },
+  {
+    "personal_info": {
+      "name": "Taylor Green",
+      "phone": "555-0105"
+    },
+    "seniority": "junior",
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "major": "Computer Science",
+        "school": "University of Tech",
+        "location": "Tech City, ST",
+        "dates": "2020-2024"
+      }
+    ],
+    "technical_skills": [
+      "Ruby",
+      "Rails",
+      "HTML",
+      "CSS"
+    ],
+    "experience": [],
+    "internships": [
+      {
+        "title": "Software Engineering Intern",
+        "company": "Web Solutions",
+        "location": "Web City, ST",
+        "dates": "Summer 2023",
+        "bullets": [
+          "Developed web applications using Ruby on Rails.",
+          "Participated in daily stand-ups to discuss progress.",
+          "Assisted in debugging issues reported by users."
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "name": "Blog Platform",
+        "technologies": [
+          "Ruby",
+          "Rails",
+          "PostgreSQL"
+        ],
+        "description": "Created a blogging platform where users can post articles."
+      }
+    ],
+    "leadership_awards": []
+  },
+  {
+    "personal_info": {
+      "name": "Jordan White",
+      "phone": "555-0201"
+    },
+    "seniority": "mid",
+    "education": [
+      {
+        "degree": "Master's",
+        "major": "Software Engineering",
+        "school": "Tech University",
+        "location": "Tech City, ST",
+        "dates": "2016-2018"
+      }
+    ],
+    "technical_skills": [
+      "Java",
+      "Spring",
+      "Microservices",
+      "Docker"
+    ],
+    "experience": [
+      {
+        "title": "Software Engineer",
+        "company": "Global Systems",
+        "location": "City Center, ST",
+        "dates": "2018-Present",
+        "bullets": [
+          "Designed and implemented microservices architecture.",
+          "Improved application performance by 30% through optimizations.",
+          "Mentored junior developers on best practices."
+        ]
+      }
+    ],
+    "internships": [],
+    "projects": [
+      {
+        "name": "Inventory Management System",
+        "technologies": [
+          "Java",
+          "Spring",
+          "MySQL"
+        ],
+        "description": "Developed a system for managing inventory across multiple locations."
+      }
+    ],
+    "leadership_awards": [
+      "Employee of the Month - June 2020"
+    ]
+  },
+  {
+    "personal_info": {
+      "name": "Alex Kim",
+      "phone": "555-0202"
+    },
+    "seniority": "mid",
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "major": "Computer Science",
+        "school": "State University",
+        "location": "State City, ST",
+        "dates": "2013-2017"
+      }
+    ],
+    "technical_skills": [
+      "JavaScript",
+      "Node.js",
+      "MongoDB",
+      "React"
+    ],
+    "experience": [
+      {
+        "title": "Full Stack Developer",
+        "company": "Dev Studio",
+        "location": "Dev City, ST",
+        "dates": "2018-Present",
+        "bullets": [
+          "Developed full stack applications using MERN stack.",
+          "Reduced load times by 40% through code refactoring.",
+          "Collaborated with designers to deliver user-friendly interfaces."
+        ]
+      }
+    ],
+    "internships": [],
+    "projects": [
+      {
+        "name": "Social Media Platform",
+        "technologies": [
+          "JavaScript",
+          "Node.js",
+          "MongoDB"
+        ],
+        "description": "Built a social media application with user authentication."
+      }
+    ],
+    "leadership_awards": [
+      "Best Innovation Award - 2021"
+    ]
+  },
+  {
+    "personal_info": {
+      "name": "Jordan Taylor",
+      "phone": "555-0203"
+    },
+    "seniority": "mid",
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "major": "Information Systems",
+        "school": "Tech Institute",
+        "location": "Tech City, ST",
+        "dates": "2014-2018"
+      }
+    ],
+    "technical_skills": [
+      "Python",
+      "Django",
+      "PostgreSQL",
+      "REST APIs"
+    ],
+    "experience": [
+      {
+        "title": "Backend Developer",
+        "company": "Tech Innovations",
+        "location": "Innovation City, ST",
+        "dates": "2018-Present",
+        "bullets": [
+          "Built RESTful APIs to support frontend applications.",
+          "Increased application security by implementing OAuth.",
+          "Worked with cross-functional teams to deliver projects."
+        ]
+      }
+    ],
+    "internships": [],
+    "projects": [
+      {
+        "name": "Project Management Tool",
+        "technologies": [
+          "Python",
+          "Django",
+          "PostgreSQL"
+        ],
+        "description": "Developed a tool for project tracking and management."
+      }
+    ],
+    "leadership_awards": []
+  },
+  {
+    "personal_info": {
+      "name": "Jamie Lee",
+      "phone": "555-0204"
+    },
+    "seniority": "mid",
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "major": "Software Engineering",
+        "school": "Top University",
+        "location": "Top City, ST",
+        "dates": "2015-2019"
+      }
+    ],
+    "technical_skills": [
+      "C++",
+      "Qt",
+      "OpenGL"
+    ],
+    "experience": [
+      {
+        "title": "Software Engineer",
+        "company": "Game Dev Co.",
+        "location": "Game City, ST",
+        "dates": "2019-Present",
+        "bullets": [
+          "Developed graphics rendering engine using OpenGL.",
+          "Collaborated with artists to enhance visual effects.",
+          "Optimized game performance, resulting in smoother gameplay."
+        ]
+      }
+    ],
+    "internships": [],
+    "projects": [
+      {
+        "name": "3D Game Engine",
+        "technologies": [
+          "C++",
+          "OpenGL"
+        ],
+        "description": "Created a 3D game engine for developing video games."
+      }
+    ],
+    "leadership_awards": [
+      "Best Game Design Award - 2021"
+    ]
+  },
+  {
+    "personal_info": {
+      "name": "Chris Martin",
+      "phone": "555-0205"
+    },
+    "seniority": "mid",
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "major": "Computer Science",
+        "school": "University of Science",
+        "location": "Science Town, ST",
+        "dates": "2015-2019"
+      }
+    ],
+    "technical_skills": [
+      "Java",
+      "Spring Boot",
+      "AWS",
+      "Kubernetes"
+    ],
+    "experience": [
+      {
+        "title": "Cloud Software Engineer",
+        "company": "Cloud Tech",
+        "location": "Cloud City, ST",
+        "dates": "2019-Present",
+        "bullets": [
+          "Designed cloud-native applications on AWS.",
+          "Implemented CI/CD pipelines to automate deployments.",
+          "Enhanced system reliability by using Kubernetes."
+        ]
+      }
+    ],
+    "internships": [],
+    "projects": [
+      {
+        "name": "Cloud Storage Solution",
+        "technologies": [
+          "Java",
+          "AWS",
+          "Kubernetes"
+        ],
+        "description": "Built a scalable cloud storage solution for clients."
+      }
+    ],
+    "leadership_awards": []
+  },
+  {
+    "personal_info": {
+      "name": "Morgan Davis",
+      "phone": "555-0206"
+    },
+    "seniority": "mid",
+    "education": [
+      {
+        "degree": "Master's",
+        "major": "Software Engineering",
+        "school": "Tech University",
+        "location": "Tech City, ST",
+        "dates": "2017-2019"
+      }
+    ],
+    "technical_skills": [
+      "Ruby",
+      "Rails",
+      "JavaScript",
+      "React"
+    ],
+    "experience": [
+      {
+        "title": "Senior Web Developer",
+        "company": "Web Solutions Inc.",
+        "location": "Web City, ST",
+        "dates": "2019-Present",
+        "bullets": [
+          "Led development of key web projects for clients.",
+          "Improved application load time by 50% through optimization.",
+          "Coordinated with product teams to align on goals."
+        ]
+      }
+    ],
+    "internships": [],
+    "projects": [
+      {
+        "name": "E-commerce Platform Revamp",
+        "technologies": [
+          "Ruby",
+          "Rails",
+          "JavaScript"
+        ],
+        "description": "Redesigned an existing e-commerce platform for better usability."
+      }
+    ],
+    "leadership_awards": []
+  },
+  {
+    "personal_info": {
+      "name": "Taylor Wilson",
+      "phone": "555-0207"
+    },
+    "seniority": "mid",
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "major": "Computer Science",
+        "school": "Tech University",
+        "location": "Tech City, ST",
+        "dates": "2014-2018"
+      }
+    ],
+    "technical_skills": [
+      "PHP",
+      "Laravel",
+      "MySQL",
+      "HTML"
+    ],
+    "experience": [
+      {
+        "title": "Web Developer",
+        "company": "Digital Agency",
+        "location": "Agency City, ST",
+        "dates": "2018-Present",
+        "bullets": [
+          "Developed dynamic websites using PHP and Laravel.",
+          "Increased user engagement by 30% through design changes.",
+          "Worked closely with clients to gather requirements."
+        ]
+      }
+    ],
+    "internships": [],
+    "projects": [
+      {
+        "name": "Custom CMS",
+        "technologies": [
+          "PHP",
+          "Laravel",
+          "MySQL"
+        ],
+        "description": "Created a custom content management system for clients."
+      }
+    ],
+    "leadership_awards": []
+  },
+  {
+    "personal_info": {
+      "name": "Jordan Harris",
+      "phone": "555-0208"
+    },
+    "seniority": "senior",
+    "education": [
+      {
+        "degree": "Master's",
+        "major": "Computer Science",
+        "school": "Prestige University",
+        "location": "Prestige City, ST",
+        "dates": "2012-2014"
+      }
+    ],
+    "technical_skills": [
+      "Java",
+      "Spring",
+      "Microservices",
+      "Kubernetes"
+    ],
+    "experience": [
+      {
+        "title": "Lead Software Engineer",
+        "company": "Enterprise Solutions",
+        "location": "Enterprise City, ST",
+        "dates": "2015-Present",
+        "bullets": [
+          "Led a team of developers in delivering complex projects.",
+          "Architected microservices solutions for scalability.",
+          "Increased system uptime to 99.9% through monitoring."
+        ]
+      }
+    ],
+    "internships": [],
+    "projects": [
+      {
+        "name": "Enterprise Resource Planning System",
+        "technologies": [
+          "Java",
+          "Spring",
+          "PostgreSQL"
+        ],
+        "description": "Developed an ERP system for enterprise clients."
+      }
+    ],
+    "leadership_awards": [
+      "Employee of the Year - 2020"
+    ]
+  },
+  {
+    "personal_info": {
+      "name": "Alex Thompson",
+      "phone": "555-0209"
+    },
+    "seniority": "senior",
+    "education": [
+      {
+        "degree": "Master's",
+        "major": "Software Engineering",
+        "school": "Tech University",
+        "location": "Tech City, ST",
+        "dates": "2011-2013"
+      }
+    ],
+    "technical_skills": [
+      "C#",
+      ".NET",
+      "Azure",
+      "Machine Learning"
+    ],
+    "experience": [
+      {
+        "title": "Senior Software Developer",
+        "company": "Tech Innovations",
+        "location": "Tech City, ST",
+        "dates": "2014-Present",
+        "bullets": [
+          "Designed and implemented machine learning algorithms.",
+          "Reduced processing time by 25% through optimizations.",
+          "Mentored junior developers in best coding practices."
+        ]
+      }
+    ],
+    "internships": [],
+    "projects": [
+      {
+        "name": "Predictive Analytics Tool",
+        "technologies": [
+          "C#",
+          ".NET",
+          "Azure"
+        ],
+        "description": "Developed a tool for predictive analytics using machine learning."
+      }
+    ],
+    "leadership_awards": []
+  },
+  {
+    "personal_info": {
+      "name": "Jamie Martinez",
+      "phone": "555-0210"
+    },
+    "seniority": "senior",
+    "education": [
+      {
+        "degree": "Bachelor's",
+        "major": "Information Technology",
+        "school": "University of Science",
+        "location": "Science Town, ST",
+        "dates": "2010-2014"
+      }
+    ],
+    "technical_skills": [
+      "Python",
+      "Django",
+      "AWS",
+      "Microservices"
+    ],
+    "experience": [
+      {
+        "title": "Technical Architect",
+        "company": "Cloud Solutions",
+        "location": "Cloud City, ST",
+        "dates": "2015-Present",
+        "bullets": [
+          "Architected cloud solutions to meet client needs.",
+          "Improved system performance by 35% through redesign.",
+          "Provided technical guidance to development teams."
+        ]
+      }
+    ],
+    "internships": [],
+    "projects": [
+      {
+        "name": "Cloud Migration Project",
+        "technologies": [
+          "Python",
+          "AWS",
+          "Django"
+        ],
+        "description": "Led a project to migrate legacy systems to the cloud."
+      }
+    ],
+    "leadership_awards": [
+      "Outstanding Achievement Award - 2021"
+    ]
+  },
+  {
+    "personal_info": {
+      "name": "Chris Rodriguez",
+      "phone": "555-0211"
+    },
+    "seniority": "senior",
+    "education": [
+      {
+        "degree": "Master's",
+        "major": "Software Engineering",
+        "school": "Prestige University",
+        "location": "Prestige City, ST",
+        "dates": "2013-2015"
+      }
+    ],
+    "technical_skills": [
+      "Java",
+      "Spring",
+      "Microservices",
+      "DevOps"
+    ],
+    "experience": [
+      {
+        "title": "Senior Software Engineer",
+        "company": "Global Enterprises",
+        "location": "Global City, ST",
+        "dates": "2016-Present",
+        "bullets": [
+          "Led development of scalable microservices architectures.",
+          "Implemented CI/CD processes to streamline deployments.",
+          "Achieved 99.8% uptime through proactive monitoring."
+        ]
+      }
+    ],
+    "internships": [],
+    "projects": [
+      {
+        "name": "Scalable Payment Processing System",
+        "technologies": [
+          "Java",
+          "Spring",
+          "AWS"
+        ],
+        "description": "Developed a payment processing system capable of handling high traffic."
+      }
+    ],
+    "leadership_awards": []
+  }
+]
