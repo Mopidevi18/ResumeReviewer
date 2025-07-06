@@ -14,7 +14,11 @@ if st.button("Review"):
     else:
         with st.spinner("Analyzing your resume…"):
             files = {
-                "resume": (resume_file.name, resume_file.getvalue(), "application/pdf")
+                "resume": (
+                    resume_file.name,
+                    resume_file.getvalue(),
+                    "application/pdf"
+                )
             }
             resp = requests.post(
                 "http://localhost:8000/review",
@@ -23,28 +27,46 @@ if st.button("Review"):
                 timeout=60
             )
             resp.raise_for_status()
-            items = resp.json().get("results", [])
+            items = resp.json()["results"]  # each item now contains "issues": [...], "rewrote": bool
 
-        if not items:
-            st.warning("No bullets were processed.")
-        else:
-            # sort by section, then subsection
-            items.sort(key=itemgetter("section", "subsection"))
+        # 1) Partition into needs-work vs already-strong
+        needs_work = [i for i in items if i["issues"]]
+        all_strong = [i for i in items if not i["issues"]]
 
-            # first group by section
-            for section, sec_group in groupby(items, key=itemgetter("section")):
+        # 2) Summary badges
+        st.markdown(f"### 🔴 {len(needs_work)} bullets need improvement")
+        st.markdown(f"### 🟢 {len(all_strong)} bullets already strong")
+
+        # 3) Render the weak bullets first
+        if needs_work:
+            # sort for grouping
+            needs_work.sort(key=itemgetter("section", "subsection"))
+            for section, sec_group in groupby(needs_work, key=itemgetter("section")):
                 st.header(section)
-
-                # within each section, group by subsection
-                subsection_list = list(sec_group)
-                for sub, sub_group in groupby(subsection_list, key=itemgetter("subsection")):
-                    st.subheader(sub)  # e.g. TurnOverReport, Dealmart, etc.
-
-                    # now display each bullet pair
-                    for rec in sub_group:
+                for subsection, sub_group in groupby(sec_group, key=itemgetter("subsection")):
+                    if subsection and subsection.lower() != "general":
+                        st.subheader(subsection)
+                    for itm in sub_group:
+                        # show why it was flagged
+                        st.caption(f"Issues: {', '.join(itm['issues'])}")
                         col1, col2 = st.columns(2)
                         col1.markdown("**Original**")
-                        col1.write(rec["original"])
-                        col2.markdown("**Rewritten**")
-                        col2.write(rec["rewritten"])
+                        col1.write(itm["original"])
+                        col2.markdown("**Suggestion**")
+                        col2.write(itm["rewritten"])
                         st.markdown("---")
+        else:
+            st.success("All your bullets are already strong—no changes needed!")
+
+        # 4) Collapsed section for the strong ones
+        if all_strong:
+            with st.expander("🟢 View already-strong bullets"):
+                # group & display originals only
+                all_strong.sort(key=itemgetter("section", "subsection"))
+                for section, sec_group in groupby(all_strong, key=itemgetter("section")):
+                    st.subheader(section)
+                    for subsection, sub_group in groupby(sec_group, key=itemgetter("subsection")):
+                        if subsection and subsection.lower() != "general":
+                            st.markdown(f"**{subsection}**")
+                        for itm in sub_group:
+                            st.write(f"- {itm['original']}")

@@ -4,8 +4,9 @@ from fastapi import FastAPI, UploadFile, File, Form
 from fastapi.middleware.cors import CORSMiddleware
 from backend.rag.retriever import Retriever
 from backend.rag.rewrite   import Rewriter
-from backend.utils.parse_resume import parse_bullets_with_subsections
-from backend.utils.skill_extraction import extract_tech_keywords
+from backend.utils.parse_resume       import parse_bullets_with_subsections
+from backend.utils.skill_extraction   import extract_tech_keywords
+from backend.utils.assessor           import assess_bullet_strength
 
 import os
 import tempfile
@@ -25,38 +26,54 @@ rewriter  = Rewriter()
 @app.post("/review")
 async def review(
     resume: UploadFile = File(...),
-    job_description: str = Form(...),
+    job_description: str   = Form(...)
 ):
-    # 1) Write the upload to a temp PDF file
+    # 1) Save uploaded PDF to a temp file
     content  = await resume.read()
     tmp_path = os.path.join(tempfile.gettempdir(), resume.filename)
     with open(tmp_path, "wb") as f:
         f.write(content)
 
-    # 2) Parse into (section, subsection, bullet) triples
-    try:
-        triples = parse_bullets_with_subsections(tmp_path)
-    finally:
-        os.remove(tmp_path)
+    # 2) Parse into (section, subsection, bullet)
+    triples = parse_bullets_with_subsections(tmp_path)
+    os.remove(tmp_path)
 
-    # 3) Extract tech-keywords from the JD
+    # 3) Extract tech‐filter from JD
     tech_filter = extract_tech_keywords(job_description)
 
-    # 4) For each bullet: retrieve examples via FAISS + rewrite via LLM
+    # 4) Loop and conditionally rewrite
     results = []
     for section, subsection, original in triples:
-        try:
-            examples  = retriever.get_similar(original, k=3, tech_filter=tech_filter)
-            rewritten = rewriter.rewrite(original, examples, job_description)
-        except Exception:
-            # fallback in case of any error
-            rewritten = original
+        # 4a) Assess bullet strength
+        is_strong, issues = assess_bullet_strength(original)
+
+        if is_strong:
+            # skip RAG+rewrite
+            rewritten  = original
+            did_rewrite = False
+        else:
+            # retrieve relevant snippets
+            examples = retriever.get_similar(
+                text=original,
+                k=3,
+                tech_filter=tech_filter
+            )
+            # rewrite under guardrails
+            rewritten  = rewriter.rewrite(
+                original,
+                examples,
+                job_description,
+                do_rewrite=True
+            )
+            did_rewrite = True
 
         results.append({
             "section":    section,
             "subsection": subsection,
             "original":   original,
+            "issues":     issues,
             "rewritten":  rewritten,
+            "rewrote":    did_rewrite,
         })
 
     return {"results": results}

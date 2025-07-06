@@ -1,8 +1,9 @@
+# backend/rag/rewrite.py
+
 import os
 from openai import OpenAI
 from typing import List
 from dotenv import load_dotenv
-import re
 
 load_dotenv()
 
@@ -13,40 +14,47 @@ class Rewriter:
             raise ValueError("Missing OPENAI_API_KEY in environment")
         self.client = OpenAI(api_key=api_key)
 
-    def rewrite(self, original: str, examples: List[str], job_description: str) -> str:
-        # 1. Build messages
+    def rewrite(self,
+                original: str,
+                examples: List[str],
+                job_description: str,
+                do_rewrite: bool
+               ) -> str:
+        # If the bullet is already strong, just echo it
+        if not do_rewrite:
+            return original
+
+        # Build a strict prompt
         system_msg = (
-            "You are an expert resume coach. "
-            "You rewrite bullet points to be concise, impactful, and metrics-driven."
+            "You are an expert resume coach. ONLY rewrite using the "
+            "original bullet and the retrieved examples. Do NOT invent "
+            "any new responsibilities, technologies, or metrics."
         )
+
         user_content = f"""
-Original bullet: "{original}"
+            Job description: "{job_description}"
 
-Job description: "{job_description}"
+            Original bullet:
+            "{original}"
 
-Examples from top resumes:
-"""
+            Retrieved examples:
+            """
         for ex in examples:
             user_content += f"- {ex}\n"
+
         user_content += """
-Rewrite the original bullet into a single concise, metrics-driven sentence.
-"""
+            Rewrite the original bullet to be concise, metrics‐driven, and aligned 
+            with the job description.  If you would change fewer than two words, 
+            just return the original bullet verbatim.
+            """
 
-        messages = [
-            {"role": "system", "content": system_msg},
-            {"role": "user", "content": user_content},
-        ]
-
-        # 2. Call the API
         resp = self.client.chat.completions.create(
             model="gpt-4o-mini",
-            messages=messages,
-            temperature=0.3,
+            messages=[
+                {"role": "system", "content": system_msg},
+                {"role": "user",   "content": user_content},
+            ],
+            temperature=0.0,    # minimize creativity
             max_tokens=100
         )
-
-        # 3. Return the rewritten bullet
-        raw = resp.choices[0].message.content.strip()
-        # Strip any leading bullets, dashes or numbers if the model still added one
-        cleaned = re.sub(r'^[\-\•\d\.\s]+', '', raw)
-        return cleaned
+        return resp.choices[0].message.content.strip()
