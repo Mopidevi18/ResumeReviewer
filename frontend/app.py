@@ -24,7 +24,7 @@ if st.button("Review"):
                 "http://localhost:8000/review",
                 files=files,
                 data={"job_description": job_desc},
-                timeout=60
+                timeout=180
             )
             resp.raise_for_status()
             items = resp.json()["results"]  # each item now contains "issues": [...], "rewrote": bool
@@ -70,3 +70,22 @@ if st.button("Review"):
                             st.markdown(f"**{subsection}**")
                         for itm in sub_group:
                             st.write(f"- {itm['original']}")
+
+
+if st.button("Check ATS Match"):
+    if not (resume_file and job_desc):
+        st.error("Please upload a resume and enter a job description.")
+    else:
+        with st.spinner("Computing match score…"):
+            resp = requests.post(
+                "http://localhost:8000/match_score",
+                files={"resume": (resume_file.name, resume_file.getvalue(), "application/pdf")},
+                data={"job_description": job_desc}
+            )
+            data = resp.json()
+        pct = data["overall_pct"]
+        st.write(f"**Overall match:** {pct}%")
+        st.progress(pct / 100)
+        st.write(f"- Skills match: {data['skill_match_pct']}%")
+        st.write(f"- Resp match:  {data['resp_match_pct']}%")
+        st.write(f"- Text similarity: {data['semantic_pct']}%")

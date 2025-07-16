@@ -56,7 +56,6 @@ def extract_resume_technologies(path: str) -> List[str]:
                 p = part.strip()
                 key = p.lower()
                 # only keep if in your curated list
-                
                 if key in KNOWN_TECH:
                     techs.append(key)
 
